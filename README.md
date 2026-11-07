@@ -13,6 +13,12 @@ An ESP32 room model that opens a curtain by light level, switches a fan by tempe
 | **Actuators** | 2 stepper motors for the curtain, relay for the fan |
 | **Communication** | Wi-Fi, MQTT on port 1883 |
 
+## Wiring
+
+Simulation wiring with the ESP32, 2 stepper motors, temperature sensor, LDR module and relay.
+
+![Simulation wiring](images/wiring.png)
+
 ## Control logic
 
 | Condition | Action |
@@ -33,6 +39,8 @@ An ESP32 room model that opens a curtain by light level, switches a fan by tempe
 
 The device also subscribes to `/esp32/mqtt/in` and prints incoming messages to the serial monitor.
 
+![Serial monitor during an MQTT test](images/serial-log.png)
+
 ## Run it
 
 Open `firmware/smart_curtain_mqtt` in Arduino IDE with the ESP32 board package and the DHT, Stepper and PubSubClient libraries. Set `ssid` and `password`, then upload.
@@ -43,4 +51,4 @@ Open `firmware/smart_curtain_mqtt` in Arduino IDE with the ESP32 board package a
 |---|---|
 | `firmware/smart_curtain_mqtt/` | Full version with Wi-Fi and MQTT |
 | `firmware/smart_curtain_offline/` | Version without Wi-Fi and MQTT |
-| `images/` | Prototype photo |
+| `images/` | Prototype photo, wiring and serial log |
